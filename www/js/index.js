@@ -4,6 +4,13 @@ $(document).ready(function(){
     $('.parallax').parallax();
 });
 
+plugin.google.maps.environment.setEnv({
+    'API_KEY_FOR_BROWSER_RELEASE': '(YOUR_API_KEY_IS_HERE)',
+    'API_KEY_FOR_BROWSER_DEBUG': ''
+});
+
+var map = plugin.google.maps.Map.getMap(div);
+
 cordova.plugins.barcodeScanner.scan(
     function (result) {
         alert("A barcode has been scanned \n" +
