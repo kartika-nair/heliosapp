@@ -1,7 +1,8 @@
 $(document).ready(function(){
     $('.sidenav').sidenav();
     $('.collapsible').collapsible();
-    $('.carousel').carousel();
+	$('.carousel').carousel();
+	$('.dropdown-trigger').dropdown();
 });
 
 
@@ -43,6 +44,3 @@ function init() {
 	}, false);
 
 }
-
-M.toast({html: 'The money has been added to your account'})
-M.Toast.dismissAll();
