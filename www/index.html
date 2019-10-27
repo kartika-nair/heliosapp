@@ -14,9 +14,17 @@
         <meta name="viewport" content="initial-scale=1, width=device-width, viewport-fit=cover">
 
         <title>HELIOS</title>
+
+        <style> 
+            #map { 
+                height: 400px; 
+                width: 100%; 
+            } 
+        </style>
+
     </head>
 
-    <body style ="background-color:powderblue">
+    <body>
 
         <script type="text/javascript" src="cordova.js"></script>
         <script type="text/javascript" src="js/index.js"></script>
@@ -60,19 +68,49 @@
             </div>
         </div>
 
-        <div id="googleMap" style="width:100%;height:400px;"></div>
+        <br>
 
-        <script>
-        function myMap() {
-            var mapProp= {
-            center:new google.maps.LatLng(51.508742,-0.120850),
-            zoom:5,
-            };
-            var map = new google.maps.Map(document.getElementById("googleMap"),mapProp);
-        }
+        <div id="map"></div> 
+        <script> 
+          function initMap() { 
+            var uluru = {lat: 28.501859, lng: 77.410320}; 
+            var map = new google.maps.Map(document.getElementById('map'), { 
+              zoom: 4, 
+              center: uluru 
+            }); 
+            var marker = new google.maps.Marker({ 
+              position: uluru, 
+              map: map 
+            }); 
+          } 
+        </script> 
+        <script async defer 
+        src= "https://maps.googleapis.com/maps/api/js?key=AIzaSyB2bXKNDezDf6YNVc-SauobynNHPo4RJb8&callback=initMap"> 
+        </script>
+        
+        <script type="text/javascript"> 
+            var loc = navigator.geolocation
+            function getlocation(){ 
+                if(navigator.geolocation){ 
+                    navigator.geolocation.getCurrentPosition(showLoc, errHand); 
+                } 
+            } 
+            function showLoc(pos){ 
+                latt = pos.coords.latitude; 
+                long = pos.coords.longitude; 
+                var lattlong = new google.maps.LatLng(latt, long); 
+                var OPTions = { 
+                    center: lattlong, 
+                    zoom: 10, 
+                    mapTypeControl: true, 
+                    navigationControlOptions: {style:google.maps.NavigationControlStyle.SMALL} 
+                } 
+                var mapg = new google.maps.Map(document.getElementById("demo2"), OPTions); 
+                var markerg =  
+                   new google.maps.Marker({position:lattlong, map:mapg, title:"You are here!"}); 
+            } 
         </script>
 
-        <script src="https://maps.googleapis.com/maps/api/js?key=&callback=initMap" async defer></script>
 
     </body>
 </html>

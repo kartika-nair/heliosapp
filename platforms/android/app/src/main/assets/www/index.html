@@ -4,16 +4,24 @@
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>    
         <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-        
+
         <meta name="format-detection" content="telephone=no">
         <meta name="msapplication-tap-highlight" content="no">
         <meta name="viewport" content="initial-scale=1, width=device-width, viewport-fit=cover">
         <link rel="stylesheet" type="text/css" href="css/index.css">
-
+        
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
         <meta name="viewport" content="initial-scale=1, width=device-width, viewport-fit=cover">
 
         <title>HELIOS</title>
+
+        <style> 
+            #map { 
+                height: 400px; 
+                width: 100%; 
+            } 
+        </style>
+
     </head>
 
     <body>
@@ -30,23 +38,55 @@
         </ul>
         <a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">menu</i></a>
 
-        <div class="parallax-container">
-            <div class="parallax"><img src="images/appicon1.png" ></div>
-        </div>
+        <br>
 
-        <div class="section white">
-            <div class="row container">
-                <h2 class="header">Helios: Adding Green Energy to Your Life</h2>
-                <p class="grey-text text-darken-3 lighten-3">
-                    Helios, aptly named after the Greek Sun Titan, aims to enrich people's lives by promoting smart living in an eco-friendly manner.
-                    We only use solar energy to power our creation.
+        <img src="images/appicon1.png" width=100%>
+
+        <div class="row">
+            <div class="col s3">
+                <i class="material-icons">departure_board</i>
+                <br>
+                <p>
+                Fast.
+                Easy.
+                Convenient.<br>
+                <b>On the go.</b>
+                </p>
+            </div>
+            <div class="col s4">
+                <i class="material-icons">wifi</i>
+                <br>
+                <p>State of the art, wifi-enabled bus stands for our customers.</p>
+            </div>
+            <div class="col s4">
+                <i class="material-icons">favorite_border</i>
+                <br>
+                <p>
+                Solar powered and eco-friendly,<br>
+                <b>because we care.</b>
                 </p>
             </div>
         </div>
 
-        <div class="parallax-container">
-            <div class="parallax"><img src="images/appicon1.png"></div>
-        </div>
+        <br>
 
+        <div id="map"></div> 
+        <script> 
+          function initMap() { 
+            var uluru = {lat: 28.501859, lng: 77.410320}; 
+            var map = new google.maps.Map(document.getElementById('map'), { 
+              zoom: 4, 
+              center: uluru 
+            }); 
+            var marker = new google.maps.Marker({ 
+              position: uluru, 
+              map: map 
+            }); 
+          } 
+        </script> 
+        <script async defer 
+        src= "https://maps.googleapis.com/maps/api/js?key=AIzaSyB2bXKNDezDf6YNVc-SauobynNHPo4RJb8&callback=initMap"> 
+        </script>
+                
     </body>
 </html>

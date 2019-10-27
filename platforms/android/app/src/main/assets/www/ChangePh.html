@@ -11,12 +11,10 @@
             <link rel="stylesheet" type="text/css" href="css/index.css">
         
             <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-        
-        <title>My Profile</title>
+
+        <title>Change Phone</title>
     </head>
-
-    <body>
-
+    <body style ="background-color:lightseagreen">
         <script type="text/javascript" src="cordova.js"></script>
         <script type="text/javascript" src="js/index.js"></script>
 
@@ -28,40 +26,31 @@
             <li><a class="waves-effect" href="Settings.html"><i class="material-icons">settings_applications</i>Settings</a></li>
         </ul>
         <a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+    
 
         <style>
             .container {
-                height: 200px;
-                position: relative;
-                border: 3px solid green;
+              height: 200px;
+              position: relative;
+              border: 3px solid green;
             }
-                        
+            
             .center {
-                margin: 0;
-                position: absolute;
-                top: 50%;
-                left: 50%;
-                -ms-transform: translate(-50%, -50%);
-                transform: translate(-50%, -50%);
+              margin: 0;
+              position: absolute;
+              top: 50%;
+              left: 50%;
+              -ms-transform: translate(-50%, -50%);
+              transform: translate(-50%, -50%);
             }
         </style>
-        
-        <div align="center">
-            <i class="material-icons">face</i>
-            <br>
-            <h4><b>PROFILE</b></h4>
-            <br>
-            <h6>
-                <textarea id="messageTxt" placeholder="First Name"></textarea>
-                <br>
-                <textarea id="messageTxt" placeholder="Last Name"></textarea>
-                <br>
-                <input id="numberTxt" placeholder="Phone" value="" type="tel" />
-                <br>
-                <textarea id="messageTxt" placeholder="Email"></textarea>
-                <br>
-            </h6>
-        </div>
 
+        <div class="center">
+            <h5>Enter your old phone number (with country code)</h5>
+            <input id="numberTxt" placeholder="Old Phone Number" value="" type="tel" />
+            <br>
+            <h5>Enter your new phone number (with country code)</h5>
+            <input id="numberTxt" placeholder="New Phone Number" value="" type="tel" />
+    
     </body>
 </html>

@@ -4,19 +4,17 @@
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>    
         <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-            
+                
         <meta name="format-detection" content="telephone=no">
         <meta name="msapplication-tap-highlight" content="no">
         <meta name="viewport" content="initial-scale=1, width=device-width, viewport-fit=cover">
         <link rel="stylesheet" type="text/css" href="css/index.css">
-    
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
         
-        <title>Settings</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+        <title>HOME</title>
     </head>
-
-    <body>
-
+    <body style="background-color: lavenderblush;">
         <script type="text/javascript" src="cordova.js"></script>
         <script type="text/javascript" src="js/index.js"></script>
 
@@ -28,15 +26,33 @@
             <li><a class="waves-effect" href="Settings.html"><i class="material-icons">settings_applications</i>Settings</a></li>
         </ul>
         <a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">menu</i></a>
-
-        <ul class="collection">
-            <a href="About.html" class="collection-item">About</a>
-            <a href="wifi1.html" class="collection-item">Wi-Fi</a>
-            <a href="ChangePh.html" class="collection-item">Change Phone Number</a>
-            <a href="FAQ.html" class="collection-item">FAQ</a>
-            <a href="tnc.html" class="collection-item">Terms and Conditions</a>
-            <a href="Login.html" class="collection-item">Log Out</a>
-        </ul>
-
+    
+        <style>
+            .container {
+                height: 200px;
+                position: relative;
+                border: 3px solid green;
+            }
+                
+            .center {
+                margin: 0;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                -ms-transform: translate(-50%, -50%);
+                transform: translate(-50%, -50%);
+            }
+        </style>
+    
+        <div class="center">
+            <input type="button" class="btn btn-positive btn-block" id="sendMessage" value="Send OTP">
+            <br>
+            <br>
+            <input id="numberTxt" placeholder="Enter OTP" value="" type="tel" />
+            <br>
+            <br>
+            <button class="btn waves-effect waves-light" type="submit" name="action">Submit</button>
+        </div>
+    
     </body>
 </html>
